@@ -3,51 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamrakcht Café | Restaurant Marocain Premium - Marrakech</title>
+    <title>Tamrakcht Café - Restaurant Marocain Authentique</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Tamrakcht Café - Restaurant marocain premium à Marrakech. Expérience culinaire authentique dans un cadre traditionnel revisité. Réservation en ligne.">
-    <meta name="keywords" content="restaurant marocain, cuisine marocaine, tajine, couscous, thé à la menthe, Marrakech, réservation restaurant">
-    <meta name="author" content="Tamrakcht Café">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tamrakcht Café | Restaurant Marocain Premium">
-    <meta property="og:description" content="Expérience culinaire authentique marocaine dans un cadre traditionnel revisité">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:url" content="https://tamrakchtcafe.com">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
-    
-    <!-- Fonts & Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Cairo:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    
     <style>
-        /* ===== VARIABLES & RESET ===== */
+        /* ===== VARIABLES ===== */
         :root {
-            --primary: #d4af37; /* Gold */
-            --secondary: #a8583d; /* Terracotta */
-            --accent: #6a8d5e; /* Palm Green */
-            --light: #f9f5f0; /* Cream */
-            --dark: #1a1a1a; /* Rich Black */
-            --sand: #f5e8d0;
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.15);
-            --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.3);
-            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            --gradient-moroccan: linear-gradient(135deg, #a8583d 0%, #d4a574 50%, #d4af37 100%);
+            --sable: #f5e8d0;
+            --ocre: #d4a574;
+            --terracotta: #a8583d;
+            --vert-palmier: #6a8d5e;
+            --doré: #d4af37;
+            --doré-clair: #e8c952;
+            --noir-rich: #1a1a1a;
+            --blanc-creme: #f9f5f0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+            --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.25);
         }
 
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
@@ -56,131 +40,35 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--blanc-creme);
+            color: var(--noir-rich);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* ===== BERBER PATTERN BACKGROUND ===== */
-        .berber-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 2px, transparent 2px),
-                radial-gradient(circle at 80% 70%, rgba(168, 88, 61, 0.05) 2px, transparent 2px),
-                radial-gradient(circle at 40% 50%, rgba(106, 141, 94, 0.05) 2px, transparent 2px);
-            background-size: 80px 80px, 100px 100px, 60px 60px;
-            background-position: 0 0, 30px 30px, 60px 60px;
-            animation: patternMove 20s linear infinite;
-            pointer-events: none;
-            z-index: -2;
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--terracotta);
         }
 
-        @keyframes patternMove {
-            0% { background-position: 0 0, 30px 30px, 60px 60px; }
-            100% { background-position: 80px 80px, 130px 130px, 120px 120px; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
+
+        p {
+            margin-bottom: 1rem;
         }
 
-        /* ===== PRELOADER ===== */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
-        }
-
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader {
-            width: 80px;
-            height: 80px;
-            position: relative;
-        }
-
-        .loader-spinner {
-            width: 100%;
-            height: 100%;
-            border: 3px solid transparent;
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        .loader-spinner:before,
-        .loader-spinner:after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-        }
-
-        .loader-spinner:before {
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            border: 3px solid transparent;
-            border-top-color: var(--secondary);
-            animation: spin 2s linear infinite reverse;
-        }
-
-        .loader-spinner:after {
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            border: 3px solid transparent;
-            border-top-color: var(--accent);
-            animation: spin 1.5s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ===== CUSTOM CURSOR ===== */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary);
-            mix-blend-mode: difference;
-            pointer-events: none;
-            z-index: 9998;
-            transition: transform 0.2s ease;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid var(--primary);
-            pointer-events: none;
-            z-index: 9997;
-            transition: all 0.6s ease;
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         /* ===== HEADER ===== */
@@ -189,25 +77,19 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.5rem 5%;
-            background: rgba(249, 245, 240, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-sm);
             z-index: 1000;
-            transition: var(--transition);
-            transform: translateY(0);
-        }
-
-        header.hidden {
-            transform: translateY(-100%);
+            padding: 1.5rem 5%;
+            background-color: rgba(245, 232, 208, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
 
         header.scrolled {
             padding: 1rem 5%;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-sm);
         }
 
-        .navbar {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -217,102 +99,44 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--secondary);
-            text-decoration: none;
-            position: relative;
+            color: var(--terracotta);
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            animation: rotate 20s linear infinite;
+            gap: 0.5rem;
         }
 
         .logo span {
-            color: var(--primary);
-            position: relative;
-        }
-
-        .logo span::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-gold);
-            transition: width 0.3s ease;
-        }
-
-        .logo:hover span::after {
-            width: 100%;
+            color: var(--doré);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
             font-weight: 500;
-            font-size: 1rem;
             position: relative;
             padding: 0.5rem 0;
-            transition: var(--transition);
         }
 
-        .nav-links a::before {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient-gold);
+            background: linear-gradient(90deg, var(--doré), var(--terracotta));
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::before,
-        .nav-links a.active::before {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        .reservation-btn {
-            background: var(--gradient-gold);
-            color: var(--dark);
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: var(--shadow-gold);
-        }
-
-        .reservation-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
         }
 
         .mobile-menu-btn {
@@ -320,18 +144,8 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--secondary);
+            color: var(--terracotta);
             cursor: pointer;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn:hover {
-            background: rgba(212, 175, 55, 0.1);
         }
 
         /* ===== HERO ===== */
@@ -340,578 +154,350 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.9)),
-                        url('https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover fixed;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
             color: white;
-            padding: 2rem;
+            padding: 6rem 2rem 2rem;
+            position: relative;
         }
 
         .hero-content {
-            text-align: center;
             max-width: 800px;
-            position: relative;
             z-index: 2;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 700;
+            color: white;
             margin-bottom: 1rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s ease forwards 0.5s;
         }
 
         .hero-subtitle {
-            font-family: 'Dancing Script', cursive;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            color: var(--primary);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s ease forwards 0.8s;
-        }
-
-        .hero-text {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s ease forwards 1.1s;
+            font-family: 'Dancing Script', cursive;
+            color: var(--doré);
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s ease forwards 1.4s;
+            flex-wrap: wrap;
         }
 
         /* ===== BUTTONS ===== */
         .btn {
-            padding: 1rem 2.5rem;
+            display: inline-block;
+            padding: 0.875rem 2rem;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
+            transition: all 0.3s ease;
             border: none;
-            font-size: 1rem;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: var(--gradient-gold);
-            color: var(--dark);
-            box-shadow: var(--shadow-gold);
+            background-color: var(--doré);
+            color: var(--noir-rich);
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
         .btn-secondary {
-            background: transparent;
+            background-color: transparent;
             color: white;
             border: 2px solid white;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .btn i {
-            font-size: 1.2rem;
-        }
-
-        /* ===== FLOATING ELEMENTS ===== */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .floating-element {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-        .floating-element:nth-child(2) { top: 40%; right: 15%; animation-delay: 1s; }
-        .floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
-        .floating-element:nth-child(4) { bottom: 20%; right: 25%; animation-delay: 3s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
         }
 
         /* ===== SECTIONS ===== */
         section {
-            padding: 8rem 5%;
-            position: relative;
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 1rem;
             position: relative;
             display: inline-block;
+            padding-bottom: 1rem;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
-            height: 4px;
-            background: var(--gradient-gold);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
+            height: 3px;
+            background: linear-gradient(90deg, var(--doré), var(--terracotta));
         }
 
         /* ===== ABOUT ===== */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 3rem;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .about-text p {
             font-size: 1.1rem;
-            margin-bottom: 1.5rem;
             line-height: 1.8;
         }
-
-        .about-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .about-img {
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        .about-img:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.1);
-        }
-
-        .about-img:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
-        .about-img:nth-child(2) { grid-column: 2; grid-row: 1; }
-        .about-img:nth-child(3) { grid-column: 2; grid-row: 2; }
 
         /* ===== MENU ===== */
         .menu-filters {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 4rem;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
         }
 
         .filter-btn {
-            padding: 0.75rem 2rem;
-            background: white;
-            border: 2px solid var(--sand);
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--ocre);
             border-radius: 50px;
-            color: var(--dark);
+            color: var(--noir-rich);
             cursor: pointer;
             font-weight: 600;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .filter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--gradient-moroccan);
-            transition: width 0.4s ease;
-            z-index: -1;
+            transition: all 0.3s ease;
         }
 
         .filter-btn.active,
         .filter-btn:hover {
+            background: var(--ocre);
             color: white;
-            border-color: transparent;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .filter-btn.active::before,
-        .filter-btn:hover::before {
-            width: 100%;
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .menu-item {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        .menu-item.animated {
-            animation: menuItemAppear 0.6s ease forwards;
-        }
-
-        @keyframes menuItemAppear {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
         }
 
         .menu-item:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .menu-item-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gradient-gold);
-            color: var(--dark);
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            z-index: 2;
-            box-shadow: var(--shadow-sm);
-            animation: pulse 2s infinite;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
 
         .menu-item-img {
-            height: 250px;
+            height: 200px;
             overflow: hidden;
-            position: relative;
         }
 
         .menu-item-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s ease;
+            transition: transform 0.5s ease;
         }
 
         .menu-item:hover .menu-item-img img {
-            transform: scale(1.15);
+            transform: scale(1.05);
         }
 
         .menu-item-content {
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .menu-item-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .menu-item-title {
-            font-size: 1.4rem;
-            color: var(--secondary);
-            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--terracotta);
         }
 
         .menu-item-price {
-            font-size: 1.6rem;
             font-weight: 700;
-            color: var(--primary);
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .menu-item-desc {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* ===== RESERVATION ===== */
-        .reservation-section {
-            background: linear-gradient(135deg, var(--light) 0%, #f1e9db 100%);
-        }
-
-        .reservation-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .reservation-form {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .reservation-form h3 {
-            font-size: 1.8rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            position: relative;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            border: 2px solid #e8e2d6;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: var(--transition);
-            background: var(--light);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .form-control.select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a8583d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1.2rem;
-        }
-
-        /* ===== MAP ===== */
-        .map-container {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            height: 100%;
-        }
-
-        .map-wrapper {
-            position: relative;
-            height: 100%;
-            min-height: 500px;
-        }
-
-        .map-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--sand), var(--light));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .map-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            animation: bounce 2s infinite;
-        }
-
-        .map-link {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-
-        /* ===== CONTACT INFO ===== */
-        .contact-info {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            border-radius: 10px;
-            transition: var(--transition);
-        }
-
-        .contact-item:hover {
-            background: var(--light);
-            transform: translateX(10px);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
+            color: var(--doré);
         }
 
         /* ===== GALLERY ===== */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
         }
 
         .gallery-item {
-            position: relative;
-            height: 300px;
-            border-radius: 15px;
+            height: 250px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            position: relative;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s ease;
+            transition: transform 0.5s ease;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+        /* ===== RESERVATION & MAP ===== */
+        .reservation-section {
+            background: linear-gradient(135deg, var(--blanc-creme) 0%, #f5f0e8 100%);
+            padding: 5rem 5%;
+        }
+
+        .reservation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reservation-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .reservation-form h3 {
+            margin-bottom: 1.5rem;
+            color: var(--terracotta);
             display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--terracotta);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--blanc-creme);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--doré);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .map-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .map-container h3 {
+            margin-bottom: 1.5rem;
+            color: var(--terracotta);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .map-wrapper {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--blanc-creme);
+            border-radius: 8px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--doré), var(--doré-clair));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--noir-rich);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
         }
 
         /* ===== REVIEWS ===== */
@@ -920,272 +506,167 @@
             margin: 0 auto;
         }
 
-        .swiper {
-            width: 100%;
-            padding: 3rem 0 5rem;
-        }
-
-        .swiper-slide {
-            height: auto;
-        }
-
         .review-card {
             background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            height: 100%;
-            transition: var(--transition);
-        }
-
-        .review-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            margin: 1rem;
         }
 
         .review-rating {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .review-text::before {
-            content: '"';
-            position: absolute;
-            top: -1rem;
-            left: 0;
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.3;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .author-avatar {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-moroccan);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
+            color: var(--doré);
+            margin-bottom: 1rem;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: linear-gradient(135deg, var(--dark) 0%, #111 100%);
+            background: var(--noir-rich);
             color: white;
-            padding: 6rem 5% 3rem;
-            position: relative;
+            padding: 4rem 5% 2rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
             max-width: 1400px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 2rem;
         }
 
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
         .footer-logo span {
-            color: var(--primary);
+            color: var(--doré);
         }
 
         .footer-social {
             display: flex;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .social-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .social-icon:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
+            background: var(--doré);
+            color: var(--noir-rich);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 3rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 1200px) {
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             .about-content,
-            .reservation-container {
+            .reservation-container,
+            .contact-container {
                 grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .menu-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
 
         @media (max-width: 768px) {
-            section {
-                padding: 6rem 5%;
-            }
-            
             .mobile-menu-btn {
-                display: flex;
+                display: block;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: -100%;
+                left: -100%;
                 width: 80%;
-                max-width: 300px;
                 height: 100vh;
-                background: white;
+                background: var(--blanc-creme);
                 flex-direction: column;
                 padding: 6rem 2rem 2rem;
-                transition: right 0.4s ease;
+                transition: left 0.3s ease;
                 box-shadow: var(--shadow-lg);
                 z-index: 999;
             }
-            
+
             .nav-links.active {
-                right: 0;
+                left: 0;
             }
-            
+
             .nav-links a {
-                font-size: 1.2rem;
-                padding: 1rem 0;
+                font-size: 1.1rem;
+                padding: 0.75rem 0;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .btn {
                 width: 100%;
                 max-width: 300px;
             }
-            
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            
+
+            .menu-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
+
+            .menu-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+
+            .filter-btn {
+                white-space: nowrap;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
         }
 
-        @media (max-width: 576px) {
-            .section-title h2 {
+        @media (max-width: 480px) {
+            .hero h1 {
                 font-size: 2rem;
             }
-            
-            .menu-grid {
-                grid-template-columns: 1fr;
+
+            .hero-subtitle {
+                font-size: 1.5rem;
             }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-social {
-                justify-content: center;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
+
+            .reservation-form,
+            .map-container {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Berber Pattern Background -->
-    <div class="berber-pattern"></div>
-    
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-    
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader-spinner"></div>
-        </div>
-    </div>
-
     <!-- Header -->
     <header id="header">
-        <nav class="navbar">
+        <nav>
             <a href="#accueil" class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-mug-hot"></i>
-                </div>
+                <i class="fas fa-utensils"></i>
                 Tamrakcht<span>Café</span>
             </a>
             
@@ -1194,165 +675,134 @@
             </button>
             
             <ul class="nav-links" id="navLinks">
-                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">Notre Histoire</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#galerie">Galerie</a></li>
                 <li><a href="#reservation">Réservation</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
-            <button class="reservation-btn" onclick="scrollToReservation()">
-                <i class="fas fa-calendar-check"></i>
-                Réserver
-            </button>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
         <div class="hero-content">
-            <h1 data-aos="fade-up" data-aos-delay="200">Tamrakcht Café</h1>
-            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">L'Art de la Cuisine Marocaine</p>
-            <p class="hero-text" data-aos="fade-up" data-aos-delay="600">
-                Une expérience sensorielle unique où tradition et modernité se rencontrent 
-                pour célébrer l'authenticité de la cuisine marocaine.
-            </p>
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-                <a href="#reservation" class="btn btn-primary">
-                    <i class="fas fa-calendar-alt"></i> Réserver une Table
-                </a>
-                <a href="#menu" class="btn btn-secondary">
-                    <i class="fas fa-utensils"></i> Découvrir le Menu
-                </a>
+            <h1>Tamrakcht Café</h1>
+            <p class="hero-subtitle">L'Authenticité Marocaine</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Découvrir le Menu</a>
+                <a href="#reservation" class="btn btn-secondary">Réserver une Table</a>
             </div>
-        </div>
-        
-        <!-- Floating Elements -->
-        <div class="floating-elements">
-            <div class="floating-element">🍃</div>
-            <div class="floating-element">☕</div>
-            <div class="floating-element">🌿</div>
-            <div class="floating-element">🥘</div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="apropos">
-        <div class="section-title" data-aos="fade-up">
+        <div class="section-title">
             <h2>Notre Histoire</h2>
-            <p class="section-subtitle">L'art de recevoir à la marocaine</p>
         </div>
         
         <div class="about-content">
-            <div class="about-text" data-aos="fade-right">
-                <p>
-                    Fondé en 2020, Tamrakcht Café est bien plus qu'un restaurant. 
-                    C'est un voyage au cœur des traditions culinaires marocaines, 
-                    réinterprétées avec une touche contemporaine et créative.
-                </p>
-                <p>
-                    Notre nom, "Tamrakcht", fait référence à l'artisanat berbère ancestral, 
-                    symbolisant l'authenticité, la chaleur et l'hospitalité qui caractérisent 
-                    notre établissement.
-                </p>
-                <p>
-                    Chaque plat est une œuvre d'art, préparé avec des ingrédients frais 
-                    et locaux, sélectionnés avec soin auprès de producteurs marocains. 
-                    Nous célébrons la richesse des épices et des saveurs qui ont fait 
-                    la renommée de notre cuisine à travers le monde.
-                </p>
-                <a href="#reservation" class="btn btn-primary" style="margin-top: 2rem;">
-                    <i class="fas fa-star"></i> Découvrir notre univers
-                </a>
+            <div class="about-text">
+                <p>Fondé en 2020, Tamrakcht Café puise ses racines dans les traditions ancestrales de la cuisine marocaine, tout en y insufflant une touche de modernité et d'élégance.</p>
+                <p>Nous sélectionnons avec soin des ingrédients frais et authentiques pour créer des plats qui racontent l'histoire riche et diversifiée du Maroc.</p>
+                <p>Notre espace a été conçu pour évoquer l'atmosphère chaleureuse d'un riad marocain, avec des éléments d'artisanat traditionnel revisités dans un style contemporain.</p>
             </div>
             
-            <div class="about-images" data-aos="fade-left">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Intérieur">
-                </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cuisine">
-                </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Spécialités">
-                </div>
+            <div class="about-images">
+                <img src="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Intérieur du restaurant" 
+                     style="width: 100%; border-radius: 10px;">
             </div>
         </div>
     </section>
 
     <!-- Menu Section -->
     <section class="menu-section" id="menu">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Notre Menu Signature</h2>
-            <p class="section-subtitle">Une symphonie de saveurs marocaines</p>
+        <div class="section-title">
+            <h2>Notre Menu</h2>
         </div>
         
-        <div class="menu-filters" data-aos="fade-up">
-            <button class="filter-btn active" data-filter="all">Toutes les spécialités</button>
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">Tout</button>
             <button class="filter-btn" data-filter="entrees">Entrées</button>
-            <button class="filter-btn" data-filter="plats">Plats principaux</button>
+            <button class="filter-btn" data-filter="tajines">Tajines</button>
+            <button class="filter-btn" data-filter="grillades">Grillades</button>
             <button class="filter-btn" data-filter="desserts">Desserts</button>
             <button class="filter-btn" data-filter="boissons">Boissons</button>
         </div>
         
-        <div class="menu-grid" id="menuGrid">
-            <!-- Menu items will be loaded by JavaScript -->
+        <div class="menu-grid">
+            <!-- Les éléments du menu seront générés par JavaScript -->
         </div>
     </section>
 
-    <!-- Reservation Section -->
+    <!-- Gallery Section -->
+    <section class="gallery" id="galerie">
+        <div class="section-title">
+            <h2>Galerie</h2>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1592415397091-a3d4d5c8c877?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Intérieur">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Plats">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cuisine">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ambiance">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation & Map Section -->
     <section class="reservation-section" id="reservation">
-        <div class="section-title" data-aos="fade-up">
+        <div class="section-title">
             <h2>Réserver une Table</h2>
-            <p class="section-subtitle">Garantissez votre expérience culinaire</p>
         </div>
         
         <div class="reservation-container">
-            <!-- Reservation Form -->
-            <div class="reservation-form" data-aos="fade-right">
-                <h3><i class="fas fa-calendar-star"></i> Formulaire de Réservation</h3>
-                
+            <!-- Formulaire de Réservation -->
+            <div class="reservation-form">
+                <h3><i class="fas fa-calendar-alt"></i> Formulaire de Réservation</h3>
                 <form id="reservationForm">
-                    <div class="form-grid">
+                    <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-user"></i> Nom complet *
-                            </label>
-                            <input type="text" class="form-control" id="reservationName" required>
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" class="form-control" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-phone"></i> Téléphone *
-                            </label>
-                            <input type="tel" class="form-control" id="reservationPhone" required>
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" class="form-control" required>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-envelope"></i> Email *
-                            </label>
-                            <input type="email" class="form-control" id="reservationEmail" required>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-calendar-day"></i> Date *
-                            </label>
-                            <input type="date" class="form-control" id="reservationDate" required>
+                            <label for="date">Date *</label>
+                            <input type="date" id="date" class="form-control" required>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-clock"></i> Heure *
-                            </label>
-                            <select class="form-control select" id="reservationTime" required>
-                                <option value="">Sélectionnez une heure</option>
+                            <label for="time">Heure *</label>
+                            <select id="time" class="form-control" required>
+                                <option value="">Sélectionnez</option>
                                 <option value="12:00">12:00</option>
                                 <option value="12:30">12:30</option>
                                 <option value="13:00">13:00</option>
                                 <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
                                 <option value="19:00">19:00</option>
                                 <option value="19:30">19:30</option>
                                 <option value="20:00">20:00</option>
@@ -1360,13 +810,10 @@
                                 <option value="21:00">21:00</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-users"></i> Nombre de personnes *
-                            </label>
-                            <select class="form-control select" id="reservationGuests" required>
-                                <option value="">Nombre de convives</option>
+                            <label for="guests">Nombre de personnes *</label>
+                            <select id="guests" class="form-control" required>
+                                <option value="">Sélectionnez</option>
                                 <option value="1">1 personne</option>
                                 <option value="2">2 personnes</option>
                                 <option value="3">3 personnes</option>
@@ -1376,60 +823,47 @@
                                 <option value="7">7+ personnes</option>
                             </select>
                         </div>
-                        
-                        <div class="form-group full-width">
-                            <label class="form-label">
-                                <i class="fas fa-comment-medical"></i> Besoins spécifiques
-                            </label>
-                            <textarea class="form-control" id="reservationNotes" rows="4" 
-                                      placeholder="Allergies, régime alimentaire, occasion spéciale..."></textarea>
-                        </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">
-                        <i class="fas fa-paper-plane"></i> Confirmer la réservation
+                    <div class="form-group full-width">
+                        <label for="message">Message spécial (allergies, anniversaire, etc.)</label>
+                        <textarea id="message" class="form-control" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Réserver maintenant
                     </button>
                 </form>
             </div>
             
-            <!-- Map & Contact -->
-            <div class="map-contact" data-aos="fade-left">
-                <div class="map-container">
-                    <div class="map-wrapper">
-                        <!-- Google Maps Embed -->
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3399.456789012345!2d-8.019345!3d31.629579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDM3JzQ2LjUiTiA4wrAwMScxNS4zIlc!5e0!3m2!1sfr!2sma!4v1620000000000!5m2!1sfr!2sma" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        
-                        <div class="map-placeholder" style="display: none;">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h3>Tamrakcht Café</h3>
-                            <p>Marrakech, Maroc</p>
-                        </div>
-                    </div>
-                    
-                    <div class="map-link">
-                        <a href="https://maps.app.goo.gl/47vgtgPPpi9HNmKm9" target="_blank" class="btn btn-secondary">
-                            <i class="fas fa-external-link-alt"></i> Ouvrir dans Google Maps
-                        </a>
-                    </div>
+            <!-- Carte Google Maps -->
+            <div class="map-container">
+                <h3><i class="fas fa-map-marker-alt"></i> Nous Trouver</h3>
+                
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3399.456789012345!2d-8.019345!3d31.629579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDM3JzQ2LjUiTiA4wrAwMScxNS4zIlc!5e0!3m2!1sfr!2sma!4v1620000000000!5m2!1sfr!2sma" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation de Tamrakcht Café">
+                    </iframe>
                 </div>
                 
-                <!-- Contact Info -->
+                <div style="text-align: center; margin-top: 1rem;">
+                    <a href="https://maps.app.goo.gl/47vgtgPPpi9HNmKm9" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Ouvrir dans Google Maps
+                    </a>
+                </div>
+                
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h4>Adresse</h4>
-                            <p>123 Avenue Mohammed V, Marrakech 40000</p>
+                            <strong>Adresse</strong>
+                            <p>Tamrakcht Café, Marrakech, Maroc</p>
                         </div>
                     </div>
                     
@@ -1438,9 +872,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div>
-                            <h4>Téléphone</h4>
+                            <strong>Téléphone</strong>
                             <p>+212 5 24 44 55 66</p>
-                            <small>Réservations par téléphone</small>
                         </div>
                     </div>
                     
@@ -1449,148 +882,47 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div>
-                            <h4>Horaires</h4>
-                            <p><strong>Lun - Jeu:</strong> 10:30 - 23:30</p>
-                            <p><strong>Ven - Dim:</strong> 10:30 - 00:00</p>
+                            <strong>Horaires</strong>
+                            <p>Tous les jours: 10:30 - 23:30</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="galerie">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Notre Univers</h2>
-            <p class="section-subtitle">Plongez dans l'atmosphère Tamrakcht</p>
-        </div>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salle principale">
-                <div class="gallery-overlay">
-                    <h3>La Salle des Épices</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Terrasse">
-                <div class="gallery-overlay">
-                    <h3>Terrasse Jardin</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cuisine ouverte">
-                <div class="gallery-overlay">
-                    <h3>Cuisine Artisanale</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bar à thé">
-                <div class="gallery-overlay">
-                    <h3>Bar à Thé Traditionnel</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Contactez-nous</h2>
-            <p class="section-subtitle">Nous sommes à votre écoute</p>
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Contact</h2>
         </div>
         
-        <div class="reservation-container">
-            <div class="reservation-form" data-aos="fade-right">
-                <h3><i class="fas fa-envelope-open-text"></i> Envoyez-nous un message</h3>
-                
-                <form id="contactForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-user"></i> Votre nom
-                            </label>
-                            <input type="text" class="form-control" id="contactName" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-at"></i> Votre email
-                            </label>
-                            <input type="email" class="form-control" id="contactEmail" required>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label class="form-label">
-                                <i class="fas fa-tag"></i> Sujet
-                            </label>
-                            <select class="form-control select" id="contactSubject" required>
-                                <option value="">Sélectionnez un sujet</option>
-                                <option value="reservation">Réservation</option>
-                                <option value="information">Demande d'information</option>
-                                <option value="group">Événement de groupe</option>
-                                <option value="feedback">Retour d'expérience</option>
-                                <option value="other">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label class="form-label">
-                                <i class="fas fa-comment"></i> Votre message
-                            </label>
-                            <textarea class="form-control" id="contactMessage" rows="6" required></textarea>
-                        </div>
+        <div class="contact-container">
+            <div>
+                <h3>Envoyez-nous un message</h3>
+                <form style="margin-top: 2rem;">
+                    <div class="form-group">
+                        <label for="contact-name">Nom</label>
+                        <input type="text" id="contact-name" class="form-control">
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">
-                        <i class="fas fa-paper-plane"></i> Envoyer le message
-                    </button>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" class="form-control" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
             </div>
             
-            <div class="contact-info" data-aos="fade-left">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div>
-                        <h4>Service Client</h4>
-                        <p>Disponible du lundi au dimanche de 9h à 23h</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-calendar-star"></i>
-                    </div>
-                    <div>
-                        <h4>Événements Privés</h4>
-                        <p>Organisez votre événement dans un cadre unique</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <div>
-                        <h4>Parking</h4>
-                        <p>Parking privé gratuit pour nos clients</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <div>
-                        <h4>Connexion</h4>
-                        <p>Wi-Fi haut débit gratuit</p>
-                    </div>
+            <div>
+                <h3>Informations de contact</h3>
+                <div style="margin-top: 2rem;">
+                    <p><i class="fas fa-envelope"></i> contact@tamrakchtcafe.com</p>
+                    <p><i class="fas fa-phone"></i> +212 5 24 44 55 66</p>
+                    <p><i class="fas fa-clock"></i> Ouvert tous les jours de 10:30 à 23:30</p>
                 </div>
             </div>
         </div>
@@ -1601,232 +933,129 @@
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">Tamrakcht<span>Café</span></div>
-                <p>
-                    Un voyage culinaire au cœur du Maroc, 
-                    où chaque détail raconte une histoire d'authenticité 
-                    et de passion pour l'art de recevoir.
-                </p>
+                <p>Restaurant marocain authentique offrant une expérience culinaire unique alliant tradition et modernité.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="TripAdvisor">
-                        <i class="fab fa-tripadvisor"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tripadvisor"></i></a>
                 </div>
             </div>
             
             <div class="footer-col">
-                <h3>Navigation</h3>
+                <h3>Liens rapides</h3>
                 <ul style="list-style: none; padding: 0;">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#apropos">Notre Histoire</a></li>
-                    <li><a href="#menu">Menu Signature</a></li>
+                    <li><a href="#menu">Menu</a></li>
                     <li><a href="#galerie">Galerie</a></li>
                 </ul>
             </div>
             
             <div class="footer-col">
-                <h3>Informations</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="#reservation">Réserver une table</a></li>
-                    <li><a href="#contact">Nous contacter</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                </ul>
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Tamrakcht Café, Marrakech</p>
+                <p><i class="fas fa-phone"></i> +212 5 24 44 55 66</p>
+                <p><i class="fas fa-envelope"></i> contact@tamrakchtcafe.com</p>
             </div>
             
             <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Inscrivez-vous pour recevoir nos actualités et offres exclusives</p>
-                <form style="margin-top: 1rem;">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Votre email" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
-                        S'inscrire
-                    </button>
-                </form>
+                <h3>Horaires</h3>
+                <p>Tous les jours: 10:30 - 23:30</p>
+                <p>Service continu</p>
             </div>
         </div>
         
         <div class="copyright">
-            <p>&copy; 2023 Tamrakcht Café. Tous droits réservés. | Conçu avec passion à Marrakech</p>
+            <p>&copy; 2023 Tamrakcht Café. Tous droits réservés.</p>
         </div>
     </footer>
 
     <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-            }, 1000);
-        });
-
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const cursorFollower = document.querySelector('.cursor-follower');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                cursorFollower.style.left = e.clientX + 'px';
-                cursorFollower.style.top = e.clientY + 'px';
-            }, 100);
-        });
-
-        document.addEventListener('mousedown', () => {
-            cursor.style.transform = 'scale(0.5)';
-            cursorFollower.style.transform = 'scale(1.3)';
-        });
-
-        document.addEventListener('mouseup', () => {
-            cursor.style.transform = 'scale(1)';
-            cursorFollower.style.transform = 'scale(1)';
-        });
-
-        // Elements that should have hover effect
-        const interactiveElements = document.querySelectorAll('a, button, .menu-item, .gallery-item, .contact-item');
-        
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursorFollower.style.transform = 'scale(1.5)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursorFollower.style.transform = 'scale(1)';
-            });
-        });
-
-        // Mobile Menu
+        // Menu mobile
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
-
+        
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
         });
-
-        // Close mobile menu when clicking a link
+        
+        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-
-        // Header scroll effect
-        let lastScroll = 0;
-        const header = document.getElementById('header');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
+        
         // Menu data
         const menuItems = [
             {
                 category: 'entrees',
-                title: 'Briouates Royales',
-                price: '48 MAD',
-                description: 'Feuilles de brick farcies au poulet fermier, amandes caramélisées et épices secrètes, croustillantes à souhait',
-                image: 'https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-                badge: 'Signature'
+                title: 'Briouates au poulet',
+                price: '42 MAD',
+                description: 'Feuilles de brick farcies au poulet, amandes et épices',
+                image: 'https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             },
             {
                 category: 'entrees',
-                title: 'Salade Tamrakcht',
-                price: '42 MAD',
-                description: 'Tomates anciennes, concombre, poivrons grillés, olives de Meknès, fromage de chèvre et vinaigrette au safran',
+                title: 'Salade Marocaine',
+                price: '38 MAD',
+                description: 'Mélange de tomates, concombres, poivrons et fines herbes',
                 image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             },
             {
-                category: 'plats',
-                title: 'Tajine de Poulet aux Olives',
-                price: '120 MAD',
-                description: 'Suprême de poulet fermier, olives vertes de Fès, citron confit, épices douces, cuisson lente au tajine d\'argile',
-                image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-                badge: 'Chef'
+                category: 'tajines',
+                title: 'Tajine de poulet aux olives',
+                price: '95 MAD',
+                description: 'Poulet mijoté avec olives vertes et citron confit',
+                image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             },
             {
-                category: 'plats',
-                title: 'Agneau aux Pruneaux et Amandes',
-                price: '145 MAD',
-                description: 'Carré d\'agneau des plateaux de l\'Atlas, pruneaux de Meknès, amandes grillées, miel d\'argan, épices royales',
+                category: 'tajines',
+                title: 'Tajine d\'agneau aux pruneaux',
+                price: '120 MAD',
+                description: 'Agneau tendre mijoté avec pruneaux, amandes et miel',
                 image: 'https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             },
             {
-                category: 'plats',
-                title: 'Couscous Royal',
-                price: '135 MAD',
-                description: 'Semoule fine à la vapeur, méchoui d\'agneau, merguez maison, poulet, sept légumes du marché, bouillon parfumé',
-                image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-                badge: 'Tradition'
+                category: 'grillades',
+                title: 'Brochettes de kefta',
+                price: '85 MAD',
+                description: 'Brochettes de viande hachée épicée, grillées au charbon',
+                image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             },
             {
                 category: 'desserts',
-                title: 'Pâtisseries Orientales',
-                price: '65 MAD',
-                description: 'Assortiment de cornes de gazelle, briouates au miel, chebakia, baklava aux noix, servi avec thé à la menthe',
+                title: 'Pâtisseries marocaines',
+                price: '55 MAD',
+                description: 'Sélection de cornes de gazelle, baklavas et chebakia',
                 image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             },
             {
-                category: 'desserts',
-                title: 'Pastilla au Lait',
-                price: '55 MAD',
-                description: 'Feuille de brick, crème pâtissière à la fleur d\'oranger, amandes effilées, cannelle, sucre glace',
-                image: 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+                category: 'boissons',
+                title: 'Thé à la menthe traditionnel',
+                price: '25 MAD',
+                description: 'Thé vert Gunpowder infusé avec de la menthe fraîche',
+                image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             },
             {
                 category: 'boissons',
-                title: 'Thé à la Menthe Artisanal',
-                price: '35 MAD',
-                description: 'Thé vert Gunpowder, menthe fraîche du jardin, sucre de canne, service traditionnel dans théière en argent',
-                image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+                title: 'Jus de fruits frais',
+                price: '30 MAD',
+                description: 'Orange, pastèque ou melon pressé sur place',
+                image: 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             }
         ];
-
+        
         // Render menu items
-        const menuGrid = document.getElementById('menuGrid');
-
+        const menuGrid = document.querySelector('.menu-grid');
+        
         function renderMenuItems(filter = 'all') {
             menuGrid.innerHTML = '';
             
@@ -1834,81 +1063,77 @@
                 ? menuItems 
                 : menuItems.filter(item => item.category === filter);
             
-            filteredItems.forEach((item, index) => {
+            filteredItems.forEach(item => {
                 const menuItem = document.createElement('div');
                 menuItem.className = 'menu-item';
                 menuItem.dataset.category = item.category;
                 
-                setTimeout(() => {
-                    menuItem.classList.add('animated');
-                }, index * 100);
-                
                 menuItem.innerHTML = `
-                    ${item.badge ? `<div class="menu-item-badge">${item.badge}</div>` : ''}
                     <div class="menu-item-img">
                         <img src="${item.image}" alt="${item.title}" loading="lazy">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
                             <h3 class="menu-item-title">${item.title}</h3>
-                            <div class="menu-item-price">${item.price}</div>
+                            <span class="menu-item-price">${item.price}</span>
                         </div>
-                        <p class="menu-item-desc">${item.description}</p>
+                        <p>${item.description}</p>
                     </div>
                 `;
                 
                 menuGrid.appendChild(menuItem);
             });
         }
-
+        
         // Initial render
         renderMenuItems();
-
+        
         // Filter buttons
         const filterBtns = document.querySelectorAll('.filter-btn');
         
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
+                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
                 btn.classList.add('active');
+                // Filter menu items
                 const filter = btn.dataset.filter;
                 renderMenuItems(filter);
             });
         });
-
-        // Reservation form
+        
+        // Form submission
         const reservationForm = document.getElementById('reservationForm');
-        const reservationDate = document.getElementById('reservationDate');
-
+        const reservationDate = document.getElementById('date');
+        
         // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
         reservationDate.min = today;
         reservationDate.value = today;
-
+        
         reservationForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
-            const formData = {
-                name: document.getElementById('reservationName').value,
-                phone: document.getElementById('reservationPhone').value,
-                email: document.getElementById('reservationEmail').value,
-                date: document.getElementById('reservationDate').value,
-                time: document.getElementById('reservationTime').value,
-                guests: document.getElementById('reservationGuests').value,
-                notes: document.getElementById('reservationNotes').value
-            };
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
             
-            // Validation
-            if (!formData.name || !formData.phone || !formData.email || !formData.date || !formData.time || !formData.guests) {
-                showNotification('Veuillez remplir tous les champs obligatoires', 'error');
+            // Simple validation
+            if (!name || !phone || !email || !date || !time || !guests) {
+                alert('Veuillez remplir tous les champs obligatoires');
                 return;
             }
             
-            // Show loading
+            // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> En cours...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
             submitBtn.disabled = true;
             
             // Simulate API call
@@ -1917,168 +1142,64 @@
                 reservationForm.reset();
                 reservationDate.value = today;
                 
-                // Show success
-                showNotification('🎉 Réservation confirmée ! Nous vous contacterons pour finaliser les détails.', 'success');
+                // Show success message
+                alert('Réservation envoyée avec succès ! Nous vous contacterons pour confirmation.');
                 
                 // Restore button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 
-                // Log for demo
-                console.log('Reservation submitted:', formData);
-                
-            }, 2000);
-        });
-
-        // Contact form
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('contactName').value,
-                email: document.getElementById('contactEmail').value,
-                subject: document.getElementById('contactSubject').value,
-                message: document.getElementById('contactMessage').value
-            };
-            
-            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-                showNotification('Veuillez remplir tous les champs', 'error');
-                return;
-            }
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                contactForm.reset();
-                showNotification('📬 Message envoyé ! Nous vous répondrons dans les 24h.', 'success');
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                console.log('Contact form submitted:', formData);
+                // In a real application, you would send data to your server here
+                // Example:
+                /*
+                fetch('/api/reservation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, email, date, time, guests, message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle response
+                })
+                .catch(error => {
+                    alert('Erreur lors de l\'envoi');
+                });
+                */
             }, 1500);
         });
-
-        // Notification system
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-                    <span>${message}</span>
-                </div>
-                <button class="notification-close">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Styles
-            notification.style.cssText = `
-                position: fixed;
-                top: 30px;
-                right: 30px;
-                background: ${type === 'success' ? 'var(--accent)' : 'var(--secondary)'};
-                color: white;
-                padding: 1.2rem 1.5rem;
-                border-radius: 12px;
-                box-shadow: var(--shadow-lg);
-                z-index: 9999;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 1rem;
-                max-width: 400px;
-                animation: slideIn 0.3s ease;
-            `;
-            
-            // Add animation styles
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOut {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(100%); opacity: 0; }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Close button
-            const closeBtn = notification.querySelector('.notification-close');
-            closeBtn.addEventListener('click', () => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            });
-            
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.style.animation = 'slideOut 0.3s ease';
-                    setTimeout(() => notification.remove(), 300);
-                }
-            }, 5000);
-        }
-
-        // Smooth scroll
+        
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
+                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
         });
-
-        // Scroll to reservation
-        function scrollToReservation() {
-            const reservation = document.getElementById('reservation');
-            window.scrollTo({
-                top: reservation.offsetTop - 100,
-                behavior: 'smooth'
-            });
-        }
-
-        // Parallax effect on scroll
+        
+        // Header scroll effect
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         });
-
-        // Initialize Swiper for reviews
-        const swiper = new Swiper('.swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
-            }
-        });
+        
+        // Initialize Swiper for reviews (if needed)
+        // const swiper = new Swiper('.swiper', {
+        //     // Swiper configuration
+        // });
     </script>
 </body>
 </html>
