@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tamrakcht Café - Restaurant Marocain Authentique</title>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    
     <style>
+        /* ===== VARIABLES ===== */
         :root {
             --sable: #f5e8d0;
             --ocre: #d4a574;
@@ -17,11 +25,13 @@
             --doré-clair: #e8c952;
             --noir-rich: #1a1a1a;
             --blanc-creme: #f9f5f0;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+            --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.25);
         }
 
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
@@ -36,27 +46,47 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--blanc-creme);
             color: var(--noir-rich);
-            overflow-x: hidden;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5 {
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             color: var(--terracotta);
         }
 
-        /* Header */
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 1.5rem 5%;
             background-color: rgba(245, 232, 208, 0.95);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 1rem 5%;
+            box-shadow: var(--shadow-sm);
         }
 
         nav {
@@ -72,7 +102,6 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--terracotta);
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -89,8 +118,6 @@
         }
 
         .nav-links a {
-            color: var(--noir-rich);
-            text-decoration: none;
             font-weight: 500;
             position: relative;
             padding: 0.5rem 0;
@@ -107,7 +134,8 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
         }
 
@@ -120,16 +148,17 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
             color: white;
-            padding: 2rem;
+            padding: 6rem 2rem 2rem;
             position: relative;
         }
 
@@ -139,9 +168,8 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin-bottom: 1rem;
             color: white;
+            margin-bottom: 1rem;
         }
 
         .hero-subtitle {
@@ -158,7 +186,7 @@
             flex-wrap: wrap;
         }
 
-        /* Buttons */
+        /* ===== BUTTONS ===== */
         .btn {
             display: inline-block;
             padding: 0.875rem 2rem;
@@ -187,11 +215,11 @@
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             transform: translateY(-3px);
         }
 
-        /* Sections */
+        /* ===== SECTIONS ===== */
         section {
             padding: 5rem 5%;
             max-width: 1400px;
@@ -204,7 +232,6 @@
         }
 
         .section-title h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
             position: relative;
             display: inline-block;
             padding-bottom: 1rem;
@@ -221,7 +248,7 @@
             background: linear-gradient(90deg, var(--doré), var(--terracotta));
         }
 
-        /* About Section */
+        /* ===== ABOUT ===== */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -230,12 +257,11 @@
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
             font-size: 1.1rem;
             line-height: 1.8;
         }
 
-        /* Menu Section */
+        /* ===== MENU ===== */
         .menu-filters {
             display: flex;
             justify-content: center;
@@ -272,7 +298,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .menu-item:hover {
@@ -316,7 +342,184 @@
             color: var(--doré);
         }
 
-        /* Footer */
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== RESERVATION & MAP ===== */
+        .reservation-section {
+            background: linear-gradient(135deg, var(--blanc-creme) 0%, #f5f0e8 100%);
+            padding: 5rem 5%;
+        }
+
+        .reservation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reservation-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .reservation-form h3 {
+            margin-bottom: 1.5rem;
+            color: var(--terracotta);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--terracotta);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--blanc-creme);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--doré);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .map-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .map-container h3 {
+            margin-bottom: 1.5rem;
+            color: var(--terracotta);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .map-wrapper {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--blanc-creme);
+            border-radius: 8px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--doré), var(--doré-clair));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--noir-rich);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews-slider {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            margin: 1rem;
+        }
+
+        .review-rating {
+            color: var(--doré);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
             background: var(--noir-rich);
             color: white;
@@ -328,6 +531,8 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
+            max-width: 1400px;
+            margin: 0 auto 2rem;
         }
 
         .footer-logo {
@@ -340,14 +545,44 @@
             color: var(--doré);
         }
 
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--doré);
+            color: var(--noir-rich);
+        }
+
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Responsive */
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-content,
+            .reservation-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
@@ -386,11 +621,8 @@
                 max-width: 300px;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .menu-grid {
+            .menu-grid,
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -403,13 +635,17 @@
             .filter-btn {
                 white-space: nowrap;
             }
-        }
 
-        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
             section {
                 padding: 3rem 5%;
             }
+        }
 
+        @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
             }
@@ -417,12 +653,17 @@
             .hero-subtitle {
                 font-size: 1.5rem;
             }
+
+            .reservation-form,
+            .map-container {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav>
             <a href="#accueil" class="logo">
                 <i class="fas fa-utensils"></i>
@@ -470,7 +711,9 @@
             </div>
             
             <div class="about-images">
-                <img src="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Intérieur du restaurant" style="width: 100%; border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Intérieur du restaurant" 
+                     style="width: 100%; border-radius: 10px;">
             </div>
         </div>
     </section>
@@ -487,10 +730,201 @@
             <button class="filter-btn" data-filter="tajines">Tajines</button>
             <button class="filter-btn" data-filter="grillades">Grillades</button>
             <button class="filter-btn" data-filter="desserts">Desserts</button>
+            <button class="filter-btn" data-filter="boissons">Boissons</button>
         </div>
         
         <div class="menu-grid">
-            <!-- Menu items will be loaded here -->
+            <!-- Les éléments du menu seront générés par JavaScript -->
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galerie">
+        <div class="section-title">
+            <h2>Galerie</h2>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1592415397091-a3d4d5c8c877?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Intérieur">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Plats">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cuisine">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ambiance">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation & Map Section -->
+    <section class="reservation-section" id="reservation">
+        <div class="section-title">
+            <h2>Réserver une Table</h2>
+        </div>
+        
+        <div class="reservation-container">
+            <!-- Formulaire de Réservation -->
+            <div class="reservation-form">
+                <h3><i class="fas fa-calendar-alt"></i> Formulaire de Réservation</h3>
+                <form id="reservationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date *</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="time">Heure *</label>
+                            <select id="time" class="form-control" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Nombre de personnes *</label>
+                            <select id="guests" class="form-control" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="1">1 personne</option>
+                                <option value="2">2 personnes</option>
+                                <option value="3">3 personnes</option>
+                                <option value="4">4 personnes</option>
+                                <option value="5">5 personnes</option>
+                                <option value="6">6 personnes</option>
+                                <option value="7">7+ personnes</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Message spécial (allergies, anniversaire, etc.)</label>
+                        <textarea id="message" class="form-control" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Réserver maintenant
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Carte Google Maps -->
+            <div class="map-container">
+                <h3><i class="fas fa-map-marker-alt"></i> Nous Trouver</h3>
+                
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3399.456789012345!2d-8.019345!3d31.629579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDM3JzQ2LjUiTiA4wrAwMScxNS4zIlc!5e0!3m2!1sfr!2sma!4v1620000000000!5m2!1sfr!2sma" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation de Tamrakcht Café">
+                    </iframe>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1rem;">
+                    <a href="https://maps.app.goo.gl/47vgtgPPpi9HNmKm9" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Ouvrir dans Google Maps
+                    </a>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Adresse</strong>
+                            <p>Tamrakcht Café, Marrakech, Maroc</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <p>+212 5 24 44 55 66</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <strong>Horaires</strong>
+                            <p>Tous les jours: 10:30 - 23:30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Contact</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div>
+                <h3>Envoyez-nous un message</h3>
+                <form style="margin-top: 2rem;">
+                    <div class="form-group">
+                        <label for="contact-name">Nom</label>
+                        <input type="text" id="contact-name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" class="form-control" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+            
+            <div>
+                <h3>Informations de contact</h3>
+                <div style="margin-top: 2rem;">
+                    <p><i class="fas fa-envelope"></i> contact@tamrakchtcafe.com</p>
+                    <p><i class="fas fa-phone"></i> +212 5 24 44 55 66</p>
+                    <p><i class="fas fa-clock"></i> Ouvert tous les jours de 10:30 à 23:30</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -499,21 +933,35 @@
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">Tamrakcht<span>Café</span></div>
-                <p>Restaurant marocain authentique offrant une expérience culinaire unique.</p>
+                <p>Restaurant marocain authentique offrant une expérience culinaire unique alliant tradition et modernité.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Liens rapides</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">Notre Histoire</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                </ul>
             </div>
             
             <div class="footer-col">
                 <h3>Contact</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Av. Mohammed V, Marrakech</p>
+                <p><i class="fas fa-map-marker-alt"></i> Tamrakcht Café, Marrakech</p>
                 <p><i class="fas fa-phone"></i> +212 5 24 44 55 66</p>
                 <p><i class="fas fa-envelope"></i> contact@tamrakchtcafe.com</p>
             </div>
             
             <div class="footer-col">
                 <h3>Horaires</h3>
-                <p>Lundi - Jeudi: 12h - 23h</p>
-                <p>Vendredi: 15h - 23h</p>
-                <p>Samedi - Dimanche: 12h - 23h</p>
+                <p>Tous les jours: 10:30 - 23:30</p>
+                <p>Service continu</p>
             </div>
         </div>
         
@@ -522,7 +970,9 @@
         </div>
     </footer>
 
+    <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
     <script>
         // Menu mobile
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -586,6 +1036,20 @@
                 price: '55 MAD',
                 description: 'Sélection de cornes de gazelle, baklavas et chebakia',
                 image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+            },
+            {
+                category: 'boissons',
+                title: 'Thé à la menthe traditionnel',
+                price: '25 MAD',
+                description: 'Thé vert Gunpowder infusé avec de la menthe fraîche',
+                image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+            },
+            {
+                category: 'boissons',
+                title: 'Jus de fruits frais',
+                price: '30 MAD',
+                description: 'Orange, pastèque ou melon pressé sur place',
+                image: 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
             }
         ];
         
@@ -639,6 +1103,71 @@
             });
         });
         
+        // Form submission
+        const reservationForm = document.getElementById('reservationForm');
+        const reservationDate = document.getElementById('date');
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        reservationDate.min = today;
+        reservationDate.value = today;
+        
+        reservationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !phone || !email || !date || !time || !guests) {
+                alert('Veuillez remplir tous les champs obligatoires');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Reset form
+                reservationForm.reset();
+                reservationDate.value = today;
+                
+                // Show success message
+                alert('Réservation envoyée avec succès ! Nous vous contacterons pour confirmation.');
+                
+                // Restore button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // In a real application, you would send data to your server here
+                // Example:
+                /*
+                fetch('/api/reservation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, email, date, time, guests, message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle response
+                })
+                .catch(error => {
+                    alert('Erreur lors de l\'envoi');
+                });
+                */
+            }, 1500);
+        });
+        
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -661,13 +1190,16 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.padding = '0.5rem 5%';
-                header.style.boxShadow = 'var(--shadow-sm)';
+                header.classList.add('scrolled');
             } else {
-                header.style.padding = '1rem 5%';
-                header.style.boxShadow = 'none';
+                header.classList.remove('scrolled');
             }
         });
+        
+        // Initialize Swiper for reviews (if needed)
+        // const swiper = new Swiper('.swiper', {
+        //     // Swiper configuration
+        // });
     </script>
 </body>
 </html>
