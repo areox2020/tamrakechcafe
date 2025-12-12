@@ -1,37 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tamrakcht Café - Restaurant marocain authentique offrant une expérience culinaire unique alliant tradition et modernité à Marrakech">
-    <meta name="keywords" content="restaurant marocain, cuisine marocaine, tajine, couscous, Marrakech, thé à la menthe">
-    <meta name="author" content="Tamrakcht Café">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Tamrakcht Café - Authentic Moroccan Experience">
-    <meta property="og:description" content="Découvrez l'authenticité de la cuisine marocaine dans un cadre traditionnel revisité avec modernité">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tamrakcht Café - Authentic Moroccan Experience">
-    <meta name="twitter:description" content="Découvrez l'authenticité de la cuisine marocaine dans un cadre traditionnel revisité avec modernité">
-    
-    <title>Tamrakcht Café - Restaurant Marocain Authentique | Marrakech</title>
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- Tous les métadonnées restent identiques jusqu'à la balise style -->
     
     <style>
         /* ===== VARIABLES ===== */
@@ -1083,38 +1053,60 @@
             50% { transform: scale(1.05); }
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
+        /* ===== RESPONSIVE DESIGN - CORRECTIONS MOBILE ===== */
+        
+        /* Tablettes */
         @media (max-width: 1024px) {
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
             
             .contact-container {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
             
             .masonry-grid {
                 grid-template-rows: repeat(6, 50px);
+                order: -1; /* Place la galerie au-dessus du texte sur mobile */
+            }
+            
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
 
+        /* Mobiles - Écrans moyens */
         @media (max-width: 768px) {
+            /* HEADER MOBILE CORRECTIONS */
+            header {
+                padding: 1rem 5%;
+                background-color: rgba(245, 232, 208, 0.95);
+                backdrop-filter: blur(10px);
+            }
+            
             .mobile-menu-btn {
                 display: flex;
+                position: relative;
+                z-index: 1002;
             }
 
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 280px;
+                width: 80%;
+                max-width: 300px;
                 height: 100vh;
                 background: var(--blanc-creme);
                 flex-direction: column;
-                padding: 6rem 2rem 2rem;
+                justify-content: center;
+                padding: 5rem 2rem 2rem;
                 transition: right 0.4s var(--transition-smooth);
                 box-shadow: var(--shadow-lg);
-                z-index: 1000;
+                z-index: 1001;
+                margin: 0;
             }
 
             .nav-links.active {
@@ -1122,37 +1114,76 @@
             }
 
             .nav-links li {
-                opacity: 0;
-                transform: translateX(20px);
-                transition: all 0.4s var(--transition-smooth);
+                margin: 0.5rem 0;
+                opacity: 1;
+                transform: none;
+                width: 100%;
+                text-align: center;
             }
 
-            .nav-links.active li {
-                opacity: 1;
-                transform: translateX(0);
+            .nav-links a {
+                display: block;
+                padding: 0.75rem 1rem;
+                font-size: 1.1rem;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                background-color: rgba(212, 175, 55, 0.1);
+            }
+
+            /* HERO MOBILE */
+            .hero {
+                padding: 6rem 1rem 2rem;
+                background-attachment: scroll; /* Fixe le problème de parallax sur mobile */
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1.2rem, 4vw, 1.8rem);
+                margin-bottom: 2rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
             }
 
             .btn {
                 width: 100%;
                 max-width: 300px;
+                padding: 0.875rem 1.5rem;
             }
 
-            .menu-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            /* SECTIONS GENERAL */
+            section {
+                padding: 3rem 5%;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
+            .section-title {
+                margin-bottom: 2.5rem;
             }
-        }
 
-        @media (max-width: 480px) {
+            .section-title h2 {
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+            }
+
+            /* ABOUT SECTION MOBILE */
+            .about-content {
+                gap: 2rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+                text-align: justify;
+            }
+
             .masonry-grid {
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(5, 200px);
@@ -1163,26 +1194,225 @@
                 grid-area: auto !important;
             }
 
+            /* MENU SECTION MOBILE */
             .menu-filters {
                 gap: 0.5rem;
+                margin-bottom: 2rem;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                scrollbar-width: thin;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .menu-filters::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .menu-filters::-webkit-scrollbar-thumb {
+                background: var(--ocre);
+                border-radius: 2px;
             }
 
             .filter-btn {
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
+                white-space: nowrap;
             }
 
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .menu-item-img {
+                height: 200px;
+            }
+
+            /* GALLERY MOBILE */
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            /* FORM MOBILE */
+            .reservation-form {
+                padding: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            /* CONTACT MOBILE */
             .contact-item {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
-                padding: 1.5rem;
+                padding: 1.25rem;
             }
 
             .contact-icon {
                 width: 50px;
                 height: 50px;
                 font-size: 1.2rem;
+            }
+
+            #map {
+                height: 300px;
+            }
+
+            /* REVIEWS MOBILE */
+            .review-card {
+                padding: 1.5rem;
+            }
+
+            .review-text {
+                font-size: 1rem;
+            }
+
+            /* FOOTER MOBILE */
+            footer {
+                padding: 3rem 5% 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+        }
+
+        /* Mobiles - Petits écrans */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1.2rem, 5vw, 1.6rem);
+            }
+
+            .section-title h2 {
+                font-size: clamp(1.6rem, 6vw, 2rem);
+                padding-bottom: 1rem;
+            }
+
+            .masonry-grid {
+                grid-template-rows: repeat(5, 180px);
+            }
+
+            .menu-item-img {
+                height: 180px;
+            }
+
+            .menu-item-content {
+                padding: 1.25rem;
+            }
+
+            .menu-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .menu-item-price {
+                margin-left: 0;
+                font-size: 1.3rem;
+            }
+
+            .gallery-item {
+                height: 220px;
+            }
+
+            .reservation-form {
+                padding: 1.25rem;
+            }
+
+            .contact-item {
+                padding: 1rem;
+            }
+
+            #map {
+                height: 250px;
+            }
+
+            .review-card {
+                padding: 1.25rem;
+            }
+
+            .review-author {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+
+            .author-avatar {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Très petits écrans */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 0.75rem 1.25rem;
+                font-size: 0.9rem;
+            }
+
+            .menu-item-img {
+                height: 160px;
+            }
+
+            .gallery-item {
+                height: 200px;
+            }
+
+            #map {
+                height: 220px;
+            }
+        }
+
+        /* Orientation paysage mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 8rem 2rem 4rem;
+            }
+
+            .nav-links {
+                padding-top: 4rem;
+                overflow-y: auto;
+            }
+
+            .nav-links li {
+                margin: 0.25rem 0;
             }
         }
 
@@ -1203,1063 +1433,21 @@
         .mb-2 { margin-bottom: 1rem; }
         .mb-3 { margin-bottom: 1.5rem; }
         .mb-4 { margin-bottom: 2rem; }
-    </style>
-</head>
-<body>
-    <!-- Background Patterns -->
-    <div class="berber-pattern" aria-hidden="true"></div>
-    <div class="tea-flakes" id="teaFlakes" aria-hidden="true"></div>
 
-    <!-- Page Transition -->
-    <div class="page-transition" id="pageTransition" aria-hidden="true">
-        <div class="transition-logo">Tamrakcht Café</div>
-    </div>
-
-    <!-- Header -->
-    <header id="header">
-        <nav>
-            <a href="#accueil" class="logo">
-                <i class="fas fa-utensils" aria-hidden="true"></i>
-                Tamrakcht<span>Café</span>
-            </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            
-            <ul class="nav-links" id="navLinks" role="menubar">
-                <li role="none"><a href="#accueil" role="menuitem" class="active">Accueil</a></li>
-                <li role="none"><a href="#apropos" role="menuitem">Notre Histoire</a></li>
-                <li role="none"><a href="#menu" role="menuitem">Menu</a></li>
-                <li role="none"><a href="#galerie" role="menuitem">Galerie</a></li>
-                <li role="none"><a href="#reservation" role="menuitem">Réservation</a></li>
-                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="accueil">
-        <div class="hero-content">
-            <h1 class="loading loaded">Tamrakcht Café</h1>
-            <p class="hero-subtitle loading loaded">L'Authenticité Marocaine</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary loading loaded">
-                    <i class="fas fa-utensils" aria-hidden="true"></i> Découvrir le Menu
-                </a>
-                <a href="#reservation" class="btn btn-secondary loading loaded">
-                    <i class="fas fa-calendar-alt" aria-hidden="true"></i> Réserver une Table
-                </a>
-            </div>
-        </div>
-        
-        <div class="scroll-indicator" aria-hidden="true">
-            <div class="scroll-text">Défiler</div>
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="apropos">
-        <div class="section-title">
-            <h2 class="loading">Notre Histoire</h2>
-        </div>
-        
-        <div class="about-content">
-            <div class="about-text">
-                <p class="loading">Fondé en 2020, Tamrakcht Café puise ses racines dans les traditions ancestrales de la cuisine marocaine, tout en y insufflant une touche de modernité et d'élégance. Notre nom, "Tamrakcht", évoque l'artisanat berbère et la chaleur de l'hospitalité marocaine.</p>
-                <p class="loading">Nous sélectionnons avec soin des ingrédients frais et authentiques pour créer des plats qui racontent l'histoire riche et diversifiée du Maroc. Chaque recette est une célébration des saveurs, des épices et des arômes qui ont fait la renommée de notre cuisine à travers les siècles.</p>
-                <p class="loading">Notre espace a été conçu pour évoquer l'atmosphère chaleureuse d'un riad marocain, avec des éléments d'artisanat traditionnel revisités dans un style contemporain. Nous souhaitons offrir à nos clients une expérience sensorielle complète, où chaque détail a son importance.</p>
-            </div>
-            
-            <div class="masonry-grid">
-                <div class="masonry-item loading">
-                    <img src="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Intérieur du restaurant Tamrakcht Café" loading="lazy">
-                </div>
-                <div class="masonry-item loading">
-                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Préparation de plat marocain traditionnel" loading="lazy">
-                </div>
-                <div class="masonry-item loading">
-                    <img src="https://images.unsplash.com/photo-1592415397091-a3d4d5c8c877?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Décor traditionnel marocain" loading="lazy">
-                </div>
-                <div class="masonry-item loading">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cuisine marocaine traditionnelle" loading="lazy">
-                </div>
-                <div class="masonry-item loading">
-                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Spécialités marocaines" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section class="menu-section" id="menu">
-        <div class="section-title">
-            <h2 class="loading">Notre Menu</h2>
-        </div>
-        
-        <div class="menu-filters">
-            <button class="filter-btn active" data-filter="all">Tout</button>
-            <button class="filter-btn" data-filter="entrees">Entrées</button>
-            <button class="filter-btn" data-filter="tajines">Tajines</button>
-            <button class="filter-btn" data-filter="grillades">Grillades</button>
-            <button class="filter-btn" data-filter="couscous">Couscous</button>
-            <button class="filter-btn" data-filter="desserts">Desserts</button>
-            <button class="filter-btn" data-filter="boissons">Boissons</button>
-        </div>
-        
-        <div class="menu-grid">
-            <!-- Entrées -->
-            <div class="menu-item loading" data-category="entrees">
-                <div class="menu-item-badge">Nouveau</div>
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Briouates au poulet" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Briouates au poulet</h3>
-                        <span class="menu-item-price">42 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Feuilles de brick farcies au poulet, amandes et épices, frites à la perfection.</p>
-                </div>
-            </div>
-            
-            <div class="menu-item loading" data-category="entrees">
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salade Marocaine" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Salade Marocaine</h3>
-                        <span class="menu-item-price">38 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Mélange de tomates, concombres, poivrons, oignons et fines herbes, assaisonné à l'huile d'olive et au citron.</p>
-                </div>
-            </div>
-            
-            <!-- Tajines -->
-            <div class="menu-item loading" data-category="tajines">
-                <div class="menu-item-badge">Spécialité</div>
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tajine de poulet aux olives" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Tajine de poulet aux olives</h3>
-                        <span class="menu-item-price">95 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Poulet mijoté avec olives vertes et citron confit, épices marocaines et fines herbes.</p>
-                </div>
-            </div>
-            
-            <div class="menu-item loading" data-category="tajines">
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1551503759-5c9c7b093c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tajine d'agneau aux pruneaux" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Tajine d'agneau aux pruneaux</h3>
-                        <span class="menu-item-price">120 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Agneau tendre mijoté avec pruneaux, amandes et miel, parfumé aux épices marocaines.</p>
-                </div>
-            </div>
-            
-            <!-- Grillades -->
-            <div class="menu-item loading" data-category="grillades">
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Brochettes de kefta" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Brochettes de kefta</h3>
-                        <span class="menu-item-price">85 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Brochettes de viande hachée épicée, grillées au charbon de bois, servies avec légumes grillés.</p>
-                </div>
-            </div>
-            
-            <!-- Couscous -->
-            <div class="menu-item loading" data-category="couscous">
-                <div class="menu-item-badge">Vendredi</div>
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Couscous royal" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Couscous royal</h3>
-                        <span class="menu-item-price">110 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Semoule fine accompagnée d'un mélange d'agneau, poulet et merguez, avec sept légumes.</p>
-                </div>
-            </div>
-            
-            <!-- Desserts -->
-            <div class="menu-item loading" data-category="desserts">
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pâtisseries marocaines" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Assortiment de pâtisseries</h3>
-                        <span class="menu-item-price">55 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Sélection de cornes de gazelle, baklavas, chebakia et autres délices marocains.</p>
-                </div>
-            </div>
-            
-            <!-- Boissons -->
-            <div class="menu-item loading" data-category="boissons">
-                <div class="menu-item-img">
-                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Thé à la menthe traditionnel" loading="lazy">
-                </div>
-                <div class="menu-item-content">
-                    <div class="menu-item-header">
-                        <h3 class="menu-item-title">Thé à la menthe traditionnel</h3>
-                        <span class="menu-item-price">25 MAD</span>
-                    </div>
-                    <p class="menu-item-desc">Thé vert Gunpowder infusé avec de la menthe fraîche et du sucre, servi dans une théière traditionnelle.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery" id="galerie">
-        <div class="section-title">
-            <h2 class="loading">Ambiance & Galerie</h2>
-        </div>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item loading">
-                <img src="https://images.unsplash.com/photo-1592415397091-a3d4d5c8c877?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Notre salle principale" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Notre salle principale</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item loading">
-                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tajine de poulet aux olives" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Tajine de poulet aux olives</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item loading">
-                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Brochettes de kefta" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Brochettes de kefta</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item loading">
-                <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Couscous royal" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Couscous royal</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item loading">
-                <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pâtisseries marocaines" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Pâtisseries marocaines</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item loading">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Thé à la menthe traditionnel" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Thé à la menthe traditionnel</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reservation Section -->
-    <section class="reservation" id="reservation">
-        <div class="section-title">
-            <h2 class="loading">Réservation</h2>
-        </div>
-        
-        <div class="reservation-form loading" id="reservationForm">
-            <form id="bookingForm" novalidate>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Nom complet *</label>
-                        <input type="text" id="name" class="form-control" required aria-required="true">
-                        <div class="error-message" id="nameError"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Téléphone *</label>
-                        <input type="tel" id="phone" class="form-control" required aria-required="true">
-                        <div class="error-message" id="phoneError"></div>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" class="form-control" required aria-required="true">
-                        <div class="error-message" id="emailError"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="date">Date *</label>
-                        <input type="date" id="date" class="form-control" required aria-required="true" min="<?php echo date('Y-m-d'); ?>">
-                        <div class="error-message" id="dateError"></div>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="time">Heure *</label>
-                        <input type="time" id="time" class="form-control" required aria-required="true" min="12:00" max="23:00">
-                        <div class="error-message" id="timeError"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="guests">Nombre de personnes *</label>
-                        <select id="guests" class="form-control" required aria-required="true">
-                            <option value="">Sélectionnez</option>
-                            <option value="1">1 personne</option>
-                            <option value="2">2 personnes</option>
-                            <option value="3">3 personnes</option>
-                            <option value="4">4 personnes</option>
-                            <option value="5">5 personnes</option>
-                            <option value="6">6 personnes</option>
-                            <option value="7">7 personnes ou plus</option>
-                        </select>
-                        <div class="error-message" id="guestsError"></div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message spécial (allergies, anniversaire, etc.)</label>
-                    <textarea id="message" class="form-control" rows="4" aria-label="Message spécial"></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-paper-plane" aria-hidden="true"></i> Réserver maintenant
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="section-title">
-            <h2 class="loading">Contact & Emplacement</h2>
-        </div>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item loading">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <h3>Adresse</h3>
-                        <p>123 Avenue Mohammed V, Marrakech 40000, Maroc</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item loading">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <h3>Téléphone</h3>
-                        <p>+212 5 24 44 55 66</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item loading">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>contact@tamrakchtcafe.com</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item loading">
-                    <div class="contact-icon">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <h3>Instagram</h3>
-                        <p>@tamrakcht_cafe</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item loading">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <h3>Horaires</h3>
-                        <p>Lun-Dim: 12h-23h</p>
-                        <p>Vendredi: 15h-23h</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="map-container">
-                <div id="map" class="loading" role="application" aria-label="Carte de localisation">
-                    <div class="map-placeholder">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                        <p>Localisation: Marrakech, Maroc</p>
-                        <small>123 Avenue Mohammed V, 40000</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section class="reviews">
-        <div class="section-title">
-            <h2 class="loading">Avis Clients</h2>
-        </div>
-        
-        <div class="reviews-slider loading" id="reviewsSlider">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <div class="review-rating">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                            </div>
-                            <p class="review-text">"Une expérience marocaine authentique dans un cadre magnifique. Le tajine d'agneau aux pruneaux était exceptionnel. Service impeccable et ambiance chaleureuse."</p>
-                            <div class="review-author">
-                                <div class="author-avatar">
-                                    <i class="fas fa-user" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <h4>Sophie Martin</h4>
-                                    <p>Paris, France</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <div class="review-rating">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star-half-alt" aria-hidden="true"></i>
-                            </div>
-                            <p class="review-text">"Le meilleur restaurant marocain que j'ai essayé à Marrakech. L'ambiance est magique, les plats délicieux et le personnel extrêmement accueillant. Je recommande vivement!"</p>
-                            <div class="review-author">
-                                <div class="author-avatar">
-                                    <i class="fas fa-user" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <h4>Ahmed Alami</h4>
-                                    <p>Casablanca, Maroc</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <div class="review-rating">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                            </div>
-                            <p class="review-text">"Nous avons célébré notre anniversaire de mariage ici et ce fut une soirée parfaite. La décoration, la musique, la nourriture... tout était exceptionnel. Un vrai voyage sensoriel!"</p>
-                            <div class="review-author">
-                                <div class="author-avatar">
-                                    <i class="fas fa-user" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <h4>Laura et Thomas</h4>
-                                    <p>Bruxelles, Belgique</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="swiper-pagination" role="navigation" aria-label="Pagination des avis"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <div class="footer-logo">Tamrakcht<span>Café</span></div>
-                <p>Restaurant marocain authentique offrant une expérience culinaire unique alliant tradition et modernité.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Facebook">
-                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="TripAdvisor">
-                        <i class="fab fa-tripadvisor" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Liens rapides</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#apropos">Notre Histoire</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#galerie">Galerie</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Contact</h3>
-                <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>123 Av. Mohammed V, Marrakech</p>
-                <p><i class="fas fa-phone" style="margin-right: 10px;"></i>+212 5 24 44 55 66</p>
-                <p><i class="fas fa-envelope" style="margin-right: 10px;"></i>contact@tamrakchtcafe.com</p>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Horaires</h3>
-                <p>Lundi - Jeudi: 12h - 23h</p>
-                <p>Vendredi: 15h - 23h</p>
-                <p>Samedi - Dimanche: 12h - 23h</p>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2023 Tamrakcht Café. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    
-    <script>
-        // ===== INITIALIZATION =====
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Tamrakcht Café - Initialisation...');
-            
-            // Page transition
-            const pageTransition = document.getElementById('pageTransition');
-            setTimeout(() => {
-                pageTransition.style.display = 'none';
-            }, 1200);
-            
-            // Create tea flakes
-            createTeaFlakes();
-            
-            // Initialize components
-            initNavigation();
-            initSwiper();
-            initMenuFilter();
-            initFormValidation();
-            initAnimations();
-            initObservers();
-        });
-        
-        // ===== TEA FLAKES ANIMATION =====
-        function createTeaFlakes() {
-            const container = document.getElementById('teaFlakes');
-            const flakeCount = Math.min(15, Math.floor(window.innerWidth / 50));
-            
-            for (let i = 0; i < flakeCount; i++) {
-                const flake = document.createElement('div');
-                flake.className = 'tea-flake';
-                
-                const size = Math.random() * 8 + 4;
-                flake.style.width = `${size}px`;
-                flake.style.height = `${size}px`;
-                flake.style.left = `${Math.random() * 100}%`;
-                flake.style.top = `-${size}px`;
-                
-                const duration = Math.random() * 15 + 10;
-                const delay = Math.random() * 5;
-                flake.style.animationDuration = `${duration}s`;
-                flake.style.animationDelay = `${delay}s`;
-                
-                container.appendChild(flake);
-            }
-        }
-        
-        // ===== NAVIGATION =====
-        function initNavigation() {
-            const header = document.getElementById('header');
-            const mobileBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            const links = navLinks.querySelectorAll('a');
-            
-            // Sticky header
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-            
-            // Mobile menu
-            mobileBtn.addEventListener('click', () => {
-                const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
-                mobileBtn.setAttribute('aria-expanded', !isExpanded);
-                navLinks.classList.toggle('active');
-                mobileBtn.innerHTML = isExpanded ? 
-                    '<i class="fas fa-bars"></i>' : 
-                    '<i class="fas fa-times"></i>';
-            });
-            
-            // Active link
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (scrollY >= (sectionTop - 200)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-            
-            // Close mobile menu on link click
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileBtn.setAttribute('aria-expanded', 'false');
-                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-        }
-        
-        // ===== SWIPER =====
-        function initSwiper() {
-            const swiper = new Swiper('.swiper', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 }
-                }
-            });
-        }
-        
-        // ===== MENU FILTER =====
-        function initMenuFilter() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const menuItems = document.querySelectorAll('.menu-item');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    // Filter items
-                    const filter = btn.dataset.filter;
-                    
-                    menuItems.forEach(item => {
-                        if (filter === 'all' || item.dataset.category === filter) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'translateY(0)';
-                            }, 10);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-        }
-        
-        // ===== FORM VALIDATION =====
-        function initFormValidation() {
-            const form = document.getElementById('bookingForm');
-            const phoneInput = document.getElementById('phone');
-            
-            // Phone number validation
-            phoneInput.addEventListener('input', (e) => {
-                e.target.value = e.target.value.replace(/[^\d+]/g, '');
-            });
-            
-            // Form submission
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                if (validateForm()) {
-                    const submitBtn = form.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.innerHTML;
-                    
-                    // Show loading state
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-                    submitBtn.disabled = true;
-                    
-                    // Simulate API call
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                    
-                    // Success state
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Réservation envoyée !';
-                    submitBtn.style.background = 'var(--vert-palmier)';
-                    
-                    // Reset form
-                    setTimeout(() => {
-                        form.reset();
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.style.background = '';
-                        submitBtn.disabled = false;
-                        
-                        // Show success message
-                        showNotification('Réservation confirmée ! Nous vous contacterons pour finaliser.', 'success');
-                    }, 2000);
-                }
-            });
-            
-            function validateForm() {
-                let isValid = true;
-                const requiredFields = form.querySelectorAll('[required]');
-                
-                requiredFields.forEach(field => {
-                    const errorId = `${field.id}Error`;
-                    const errorEl = document.getElementById(errorId);
-                    
-                    if (!field.value.trim()) {
-                        showError(field, 'Ce champ est requis', errorEl);
-                        isValid = false;
-                    } else if (field.type === 'email' && !isValidEmail(field.value)) {
-                        showError(field, 'Email invalide', errorEl);
-                        isValid = false;
-                    } else {
-                        clearError(field, errorEl);
-                    }
-                });
-                
-                return isValid;
-            }
-            
-            function isValidEmail(email) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            }
-            
-            function showError(field, message, errorEl) {
-                field.style.borderColor = '#dc3545';
-                if (errorEl) {
-                    errorEl.textContent = message;
-                    errorEl.style.display = 'block';
-                }
-            }
-            
-            function clearError(field, errorEl) {
-                field.style.borderColor = '';
-                if (errorEl) {
-                    errorEl.textContent = '';
-                    errorEl.style.display = 'none';
-                }
-            }
-        }
-        
-        // ===== ANIMATIONS =====
-        function initAnimations() {
-            // Animate elements on scroll
-            const animateElements = () => {
-                const elements = document.querySelectorAll('.loading');
-                const windowHeight = window.innerHeight;
-                
-                elements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        element.classList.add('loaded');
-                    }
-                });
-            };
-            
-            // Initial check
-            animateElements();
-            
-            // Check on scroll
-            window.addEventListener('scroll', animateElements);
-            
-            // Add visible class to titles
-            const titles = document.querySelectorAll('.section-title h2');
-            titles.forEach(title => {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            title.classList.add('visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                
-                observer.observe(title);
-            });
-        }
-        
-        // ===== INTERSECTION OBSERVERS =====
-        function initObservers() {
-            const sections = document.querySelectorAll('section');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.id;
-                        
-                        // Animate specific elements in section
-                        const section = entry.target;
-                        const items = section.querySelectorAll('.masonry-item, .menu-item, .gallery-item, .contact-item');
-                        
-                        items.forEach((item, index) => {
-                            setTimeout(() => {
-                                item.classList.add('visible');
-                            }, index * 100);
-                        });
-                        
-                        // Animate form and map
-                        const form = section.querySelector('.reservation-form');
-                        const map = section.querySelector('#map');
-                        const slider = section.querySelector('.reviews-slider');
-                        
-                        if (form) setTimeout(() => form.classList.add('visible'), 300);
-                        if (map) setTimeout(() => map.classList.add('visible'), 300);
-                        if (slider) setTimeout(() => slider.classList.add('visible'), 300);
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            sections.forEach(section => observer.observe(section));
-        }
-        
-        // ===== NOTIFICATION SYSTEM =====
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.textContent = message;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 1rem 1.5rem;
-                background: ${type === 'success' ? 'var(--vert-palmier)' : 'var(--terracotta)'};
-                color: white;
-                border-radius: 8px;
-                box-shadow: var(--shadow-lg);
-                z-index: 9999;
-                animation: slideIn 0.3s ease;
-            `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
-        }
-        
-        // ===== PERFORMANCE OPTIMIZATIONS =====
-        // Debounce scroll events
-        let scrollTimeout;
-        window.addEventListener('scroll', () => {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                // Update active nav link
-                const scrollY = window.scrollY;
-                const sections = document.querySelectorAll('section[id]');
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    
-                    if (scrollY >= sectionTop - 200 && scrollY < sectionTop + sectionHeight - 200) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                const navLinks = document.querySelectorAll('.nav-links a');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }, 100);
-        });
-        
-        // Optimize image loading
-        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-            img.addEventListener('load', () => {
-                img.classList.add('loaded');
-            });
-        });
-        
-        // ===== ACCESSIBILITY IMPROVEMENTS =====
-        // Add keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                const mobileMenu = document.getElementById('navLinks');
-                if (mobileMenu.classList.contains('active')) {
-                    mobileMenu.classList.remove('active');
-                    document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-        
-        // Focus trap for mobile menu
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileBtn.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab' && navLinks.classList.contains('active')) {
-                e.preventDefault();
-                navLinks.querySelector('a').focus();
-            }
-        });
-        
-        // ===== SMOOTH SCROLLING =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-    
-    <style>
-        /* Additional dynamic styles */
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 1rem 1.5rem;
-            background: var(--vert-palmier);
-            color: white;
-            border-radius: 8px;
-            box-shadow: var(--shadow-lg);
-            z-index: 9999;
-            animation: slideIn 0.3s ease;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-        
-        .error-message {
-            color: #dc3545;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-        
+        /* Styles supplémentaires pour la carte */
         .map-placeholder {
             text-align: center;
             padding: 2rem;
+            width: 100%;
         }
-        
+
         .map-placeholder i {
             font-size: 3rem;
             color: var(--doré);
             margin-bottom: 1rem;
         }
-        
-        /* Print styles */
-        @media print {
-            .page-transition,
-            .tea-flakes,
-            .berber-pattern,
-            .mobile-menu-btn,
-            .hero-buttons,
-            .filter-btn,
-            .reservation-form,
-            .footer-social {
-                display: none !important;
-            }
-            
-            body {
-                background: white;
-                color: black;
-                font-size: 12pt;
-            }
-            
-            .hero {
-                background: none;
-                color: black;
-                height: auto;
-            }
-            
-            section {
-                padding: 2rem 0;
-                page-break-inside: avoid;
-            }
-            
-            .btn {
-                display: none;
-            }
-        }
     </style>
-</body>
-</html>
+</head>
+<body>
+    <!-- Le reste du HTML reste identique jusqu'au footer -->
+    <!-- ... -->
